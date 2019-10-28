@@ -89,7 +89,7 @@ export default {
 		flex-flow: column;
 		justify-content: center;
 		width: 100vw;
-		height: 100%;
+		height: 100vh;
 		background: #f2f2f2;
 		overflow: hidden;
 
