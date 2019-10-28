@@ -87,10 +87,11 @@ module.exports = {
 			'error',
 			'stroustrup'
 		],
-		'comma-dangle'         : 'off',
-		'no-tabs'              : 0,
-		'padded-blocks'        : 'off',
-		'no-underscore-dangle' : 'off'
+		'comma-dangle'          : 'off',
+		'no-tabs'               : 0,
+		'padded-blocks'         : 'off',
+		'no-underscore-dangle'  : 'off',
+		'prefer-default-export' : false,
 	},
 	'globals' : {
 		'appRequire' : true,

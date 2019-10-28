@@ -1,4 +1,4 @@
-import firebase from '@/lib/db/conf';
+import firebase from '@/lib/conf';
 
 const _firestore = firebase.firestore();
 
