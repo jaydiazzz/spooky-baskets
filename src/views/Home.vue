@@ -1,6 +1,6 @@
 <template lang="pug">
   .home
-    h1 Hello!
+    h1 Hi!
 </template>
 
 <script>
