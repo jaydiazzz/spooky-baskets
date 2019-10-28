@@ -3,6 +3,10 @@
   "version": "0.1.0",
   "description": "Template",
   "private": true,
+  "engines": {
+    "node" : "10.15.3",
+    "npm"  : "6.11.3"
+  },
   "scripts": {
     "serve": "vue-cli-service serve --host=0.0.0.0",
     "build": "vue-cli-service build",
