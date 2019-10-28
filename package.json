@@ -4,8 +4,8 @@
   "description": "Template",
   "private": true,
   "engines": {
-    "node" : "10.15.3",
-    "npm"  : "6.11.3"
+    "node": "10.15.3",
+    "npm": "6.11.3"
   },
   "scripts": {
     "serve": "vue-cli-service serve --host=0.0.0.0",
@@ -19,11 +19,13 @@
     "postinstall": "npm install express"
   },
   "dependencies": {
+    "express": "^4.17.1",
     "firebase": "^5.10.1",
     "http-server": "^0.11.1",
     "proj4": "^2.5.0",
     "query-string": "^6.5.0",
     "register-service-worker": "^1.5.2",
+    "swiper": "^4.5.0",
     "vue": "^2.6.6",
     "vue-router": "^3.0.1",
     "vuex": "^3.0.1"
