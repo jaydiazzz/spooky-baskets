@@ -12,10 +12,24 @@ export const write = async ( user, cb, errCb ) => {
 
 	console.log( userList );
 
-	// pick a random user
-	const randomIndex = Math.floor( Math.random() * userList.length );
+	let foundUser  = null;
+	let userIndex = null;
 
-	const randomUser = userList[randomIndex];
+	const getRandomUser = () => {
+		// pick a random user
+		const randomIndex = Math.floor( Math.random() * userList.length );
+
+		const randomUser = userList[randomIndex];
+
+		if ( randomUser.toLowerCase() === user.toLowerCase() ) {
+			return getRandomUser();
+		}
+
+		foundUser = randomUser;
+		userIndex = randomIndex;
+	};
+
+	getRandomUser();
 
 	// get all of the relations we already have
 	const existingRelations = await firebase.database().ref( 'relations' )
@@ -55,14 +69,14 @@ export const write = async ( user, cb, errCb ) => {
 	await firebase.database().ref( 'relations' )
 		.push( {
 			receiving : user,
-			to        : randomUser,
+			to        : foundUser,
 		} )
 		.then( () => {
 
 			console.log( userList );
 
 			// take off the users from the list of users still available
-			userList.splice( randomIndex, 1 );
+			userList.splice( userIndex, 1 );
 
 			console.log( userList );
 
@@ -70,7 +84,7 @@ export const write = async ( user, cb, errCb ) => {
 			firebase.database().ref( 'usersAvailable' ).set( userList );
 		} );
 
-	cb( randomUser );
+	cb( foundUser );
 
 };
 

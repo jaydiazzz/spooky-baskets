@@ -52,6 +52,7 @@ export default {
 				resistanceRatio : 0,
 				direction       : 'horizontal',
 				threshold       : 50,
+				allowTouchMove  : false,
 			},
 		},
 
@@ -87,15 +88,17 @@ export default {
 		display: flex;
 		flex-flow: column;
 		justify-content: center;
-		width: 100%;
+		width: 100vw;
 		height: 100%;
 		background: #f2f2f2;
+		overflow: hidden;
 
 		.back {
 			position: absolute;
 			top: 15px;
 			left: 30px;
 			cursor: pointer;
+			z-index: 1000;
 		}
 
 		.ghost {
@@ -195,6 +198,17 @@ export default {
 			}
 
 			.slide-2 {
+			}
+		}
+	}
+
+	@media screen and (max-width: 450px) {
+		.home {
+			align-items: center;
+
+			.container {
+				margin: auto;
+				width: 100%;
 			}
 		}
 	}
