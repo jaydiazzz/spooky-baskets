@@ -15,7 +15,8 @@
     "lint": "vue-cli-service lint",
     "test:e2e": "vue-cli-service test:e2e",
     "test:unit": "vue-cli-service test:unit",
-    "ssh": "docker-machine ssh fid-access-replacement"
+    "ssh": "docker-machine ssh fid-access-replacement",
+    "postinstall": "npm install express"
   },
   "dependencies": {
     "firebase": "^5.10.1",
